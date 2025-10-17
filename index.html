@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bass Test Tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Bass Test Tool</h1>
+    <p class="lead">
+      Use the controls to generate low frequency test tones and check how your speakers handle bass.
+      Start with a comfortable volume before increasing output.
+    </p>
+
+    <section class="controls">
+      <div class="primary-actions">
+        <button id="toggle" class="btn btn-primary">Start Tone</button>
+        <button id="sweep" class="btn">Bass Sweep (20-200 Hz)</button>
+      </div>
+
+      <div class="control">
+        <label for="frequency">Frequency: <span id="frequencyValue">60 Hz</span></label>
+        <input type="range" id="frequency" min="20" max="200" value="60" step="1">
+      </div>
+
+      <div class="control">
+        <label for="volume">Volume: <span id="volumeValue">60%</span></label>
+        <input type="range" id="volume" min="0" max="100" value="60">
+      </div>
+
+      <div class="control">
+        <label for="waveform">Waveform</label>
+        <select id="waveform">
+          <option value="sine" selected>Sine</option>
+          <option value="square">Square</option>
+          <option value="triangle">Triangle</option>
+          <option value="sawtooth">Sawtooth</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="visual">
+      <div class="meter">
+        <div class="pulse" id="pulse"></div>
+      </div>
+      <canvas id="visualizer" width="360" height="120"></canvas>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>
+      Tips: Bass tones can cause vibrating objects nearby. Remove loose items and keep volume low if unsure about your speaker limits.
+    </small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
